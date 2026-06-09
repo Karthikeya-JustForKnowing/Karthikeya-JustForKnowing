@@ -1,100 +1,94 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 200" width="760" height="200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 230" width="680" height="230">
   <defs>
-    <linearGradient id="gold" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#ffd700"/>
-      <stop offset="100%" stop-color="#b8860b"/>
-    </linearGradient>
-    <linearGradient id="silver" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#e8e8e8"/>
-      <stop offset="100%" stop-color="#a0a0a0"/>
-    </linearGradient>
-    <linearGradient id="purple" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#c084fc"/>
-      <stop offset="100%" stop-color="#7c3aed"/>
-    </linearGradient>
-    <linearGradient id="blue" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#60a5fa"/>
-      <stop offset="100%" stop-color="#1d4ed8"/>
-    </linearGradient>
-    <linearGradient id="green" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#4ade80"/>
-      <stop offset="100%" stop-color="#15803d"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="2.5" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
     <style>
       @keyframes popIn {
-        0%   { opacity:0; transform: scale(0.5) translateY(20px); }
-        70%  { transform: scale(1.1) translateY(-4px); }
-        100% { opacity:1; transform: scale(1) translateY(0); }
+        0%   { opacity:0; transform:scale(0.4) translateY(30px); }
+        65%  { opacity:1; transform:scale(1.08) translateY(-5px); }
+        100% { opacity:1; transform:scale(1) translateY(0); }
       }
-      @keyframes glow-pulse {
-        0%,100% { filter: drop-shadow(0 0 4px currentColor); }
-        50%      { filter: drop-shadow(0 0 12px currentColor); }
+      @keyframes shimmer {
+        0%,100% { opacity:0.7; }
+        50%      { opacity:1; }
       }
-      .t1 { animation: popIn .5s 0.2s both cubic-bezier(.34,1.56,.64,1) }
-      .t2 { animation: popIn .5s 0.5s both cubic-bezier(.34,1.56,.64,1) }
-      .t3 { animation: popIn .5s 0.8s both cubic-bezier(.34,1.56,.64,1) }
-      .t4 { animation: popIn .5s 1.1s both cubic-bezier(.34,1.56,.64,1) }
-      .t5 { animation: popIn .5s 1.4s both cubic-bezier(.34,1.56,.64,1) }
-      .lbl { font-family: 'Segoe UI', Arial, sans-serif; font-size: 11px; font-weight: 700; text-anchor: middle; }
-      .sub { font-family: 'Segoe UI', Arial, sans-serif; font-size: 9px; text-anchor: middle; fill: #666; }
-      .bg  { fill: #0d1117; }
-      .card { fill: #161b22; rx: 10; }
+      .base { font-family:'Courier New',Courier,monospace; }
+      .lbl  { font-size:12px; font-weight:700; text-anchor:middle; }
+      .rank { font-size:10px; text-anchor:middle; fill:#555; }
+      .desc { font-size:10px; text-anchor:middle; }
+      .hdr  { font-size:13px; font-weight:700; text-anchor:middle; fill:#a78bfa; font-family:'Segoe UI',Arial,sans-serif; }
+      .t1 { animation:popIn .55s 1.0s both cubic-bezier(.34,1.4,.64,1); }
+      .t2 { animation:popIn .55s 1.3s both cubic-bezier(.34,1.4,.64,1); }
+      .t3 { animation:popIn .55s 1.6s both cubic-bezier(.34,1.4,.64,1); }
+      .t4 { animation:popIn .55s 1.9s both cubic-bezier(.34,1.4,.64,1); }
+      .t5 { animation:popIn .55s 2.2s both cubic-bezier(.34,1.4,.64,1); }
+      .glow1 { animation:shimmer 2.2s 1.6s ease-in-out infinite; }
+      .glow2 { animation:shimmer 2.2s 1.9s ease-in-out infinite; }
+      .glow3 { animation:shimmer 2.2s 2.2s ease-in-out infinite; }
+      .glow4 { animation:shimmer 2.2s 2.5s ease-in-out infinite; }
+      .glow5 { animation:shimmer 2.2s 2.8s ease-in-out infinite; }
     </style>
   </defs>
 
-  <!-- background -->
-  <rect width="760" height="200" rx="14" class="bg"/>
+  <!-- bg -->
+  <rect width="680" height="230" rx="12" fill="#0d1117"/>
 
-  <!-- title -->
-  <text x="380" y="30" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="14" font-weight="700" fill="#a78bfa">🏆  Achievement Wall</text>
-  <line x1="80" y1="40" x2="680" y2="40" stroke="#21262d" stroke-width="1"/>
+  <!-- header -->
+  <text x="340" y="34" class="hdr">Achievement Wall</text>
+  <line x1="60" y1="46" x2="620" y2="46" stroke="#21262d" stroke-width="0.8"/>
 
-  <!-- Trophy 1: Commits -->
-  <g class="t1" transform="translate(55,75)">
-    <rect x="-48" y="-32" width="96" height="100" rx="10" fill="#161b22"/>
-    <text y="-8" text-anchor="middle" font-size="30" filter="url(#glow)" fill="url(#gold)">🏅</text>
-    <text y="18" class="lbl" fill="#ffd700">Commits</text>
-    <text y="30" class="sub">SSS Rank</text>
-    <text y="44" class="sub" fill="#ffd700">100+ commits</text>
+  <!-- 5 cards evenly spread: centers at 68, 204, 340, 476, 612  card w=108 -->
+
+  <!-- Card 1 — Commits (gold) -->
+  <g class="t1">
+    <rect x="14" y="58" width="108" height="148" rx="10" fill="#161b22" stroke="#ffd70033" stroke-width="1"/>
+    <rect x="14" y="58" width="108" height="4" rx="2" fill="#ffd700" opacity="0.9"/>
+    <text x="68" y="104" text-anchor="middle" font-size="34" class="glow1">&#x1F3C6;</text>
+    <text x="68" y="128" class="lbl" fill="#ffd700">Commits</text>
+    <text x="68" y="145" class="rank">SSS Rank</text>
+    <text x="68" y="161" class="desc" fill="#ffd70099">100+ pushes</text>
+    <text x="68" y="195" text-anchor="middle" font-size="9" fill="#ffd700" opacity="0.6" font-family="monospace">&#x2605;&#x2605;&#x2605;</text>
   </g>
 
-  <!-- Trophy 2: Repos -->
-  <g class="t2" transform="translate(205,75)">
-    <rect x="-48" y="-32" width="96" height="100" rx="10" fill="#161b22"/>
-    <text y="-8" text-anchor="middle" font-size="30" filter="url(#glow)" fill="url(#purple)">📦</text>
-    <text y="18" class="lbl" fill="#c084fc">Repositories</text>
-    <text y="30" class="sub">AA Rank</text>
-    <text y="44" class="sub" fill="#c084fc">10+ repos</text>
+  <!-- Card 2 — Repos (purple) -->
+  <g class="t2">
+    <rect x="150" y="58" width="108" height="148" rx="10" fill="#161b22" stroke="#a78bfa33" stroke-width="1"/>
+    <rect x="150" y="58" width="108" height="4" rx="2" fill="#a78bfa" opacity="0.9"/>
+    <text x="204" y="104" text-anchor="middle" font-size="34" class="glow2">&#x1F4E6;</text>
+    <text x="204" y="128" class="lbl" fill="#c084fc">Repositories</text>
+    <text x="204" y="145" class="rank">AA Rank</text>
+    <text x="204" y="161" class="desc" fill="#c084fc99">10+ repos</text>
+    <text x="204" y="195" text-anchor="middle" font-size="9" fill="#a78bfa" opacity="0.6" font-family="monospace">&#x2605;&#x2605;</text>
   </g>
 
-  <!-- Trophy 3: AI Builder -->
-  <g class="t3" transform="translate(355,75)">
-    <rect x="-48" y="-32" width="96" height="100" rx="10" fill="#161b22"/>
-    <text y="-8" text-anchor="middle" font-size="30" filter="url(#glow)" fill="url(#blue)">🤖</text>
-    <text y="18" class="lbl" fill="#60a5fa">AI Builder</text>
-    <text y="30" class="sub">S Rank</text>
-    <text y="44" class="sub" fill="#60a5fa">Rare achieve</text>
+  <!-- Card 3 — AI Builder (blue) -->
+  <g class="t3">
+    <rect x="286" y="58" width="108" height="148" rx="10" fill="#161b22" stroke="#60a5fa33" stroke-width="1"/>
+    <rect x="286" y="58" width="108" height="4" rx="2" fill="#60a5fa" opacity="0.9"/>
+    <text x="340" y="104" text-anchor="middle" font-size="34" class="glow3">&#x1F916;</text>
+    <text x="340" y="128" class="lbl" fill="#60a5fa">AI Builder</text>
+    <text x="340" y="145" class="rank">S Rank</text>
+    <text x="340" y="161" class="desc" fill="#60a5fa99">Rare achieve</text>
+    <text x="340" y="195" text-anchor="middle" font-size="9" fill="#60a5fa" opacity="0.6" font-family="monospace">&#x2605;&#x2605;&#x2605;</text>
   </g>
 
-  <!-- Trophy 4: Shipper -->
-  <g class="t4" transform="translate(505,75)">
-    <rect x="-48" y="-32" width="96" height="100" rx="10" fill="#161b22"/>
-    <text y="-8" text-anchor="middle" font-size="30" filter="url(#glow)" fill="url(#green)">🚀</text>
-    <text y="18" class="lbl" fill="#4ade80">Shipper</text>
-    <text y="30" class="sub">SS Rank</text>
-    <text y="44" class="sub" fill="#4ade80">Fast delivery</text>
+  <!-- Card 4 — Shipper (green) -->
+  <g class="t4">
+    <rect x="422" y="58" width="108" height="148" rx="10" fill="#161b22" stroke="#4ade8033" stroke-width="1"/>
+    <rect x="422" y="58" width="108" height="4" rx="2" fill="#4ade80" opacity="0.9"/>
+    <text x="476" y="104" text-anchor="middle" font-size="34" class="glow4">&#x1F680;</text>
+    <text x="476" y="128" class="lbl" fill="#4ade80">Shipper</text>
+    <text x="476" y="145" class="rank">SS Rank</text>
+    <text x="476" y="161" class="desc" fill="#4ade8099">Fast delivery</text>
+    <text x="476" y="195" text-anchor="middle" font-size="9" fill="#4ade80" opacity="0.6" font-family="monospace">&#x2605;&#x2605;&#x2605;</text>
   </g>
 
-  <!-- Trophy 5: Video -->
-  <g class="t5" transform="translate(655,75)">
-    <rect x="-48" y="-32" width="96" height="100" rx="10" fill="#161b22"/>
-    <text y="-8" text-anchor="middle" font-size="30" filter="url(#glow)" fill="url(#silver)">🎬</text>
-    <text y="18" class="lbl" fill="#e8e8e8">Video Editor</text>
-    <text y="30" class="sub">S Rank</text>
-    <text y="44" class="sub" fill="#e8e8e8">Cinematic cuts</text>
+  <!-- Card 5 — Video Editor (pink) -->
+  <g class="t5">
+    <rect x="558" y="58" width="108" height="148" rx="10" fill="#161b22" stroke="#f472b633" stroke-width="1"/>
+    <rect x="558" y="58" width="108" height="4" rx="2" fill="#f472b6" opacity="0.9"/>
+    <text x="612" y="104" text-anchor="middle" font-size="34" class="glow5">&#x1F3AC;</text>
+    <text x="612" y="128" class="lbl" fill="#f472b6">Video Editor</text>
+    <text x="612" y="145" class="rank">S Rank</text>
+    <text x="612" y="161" class="desc" fill="#f472b699">Cinematic cuts</text>
+    <text x="612" y="195" text-anchor="middle" font-size="9" fill="#f472b6" opacity="0.6" font-family="monospace">&#x2605;&#x2605;&#x2605;</text>
   </g>
 </svg>
