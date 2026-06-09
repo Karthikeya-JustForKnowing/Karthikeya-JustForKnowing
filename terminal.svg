@@ -1,89 +1,93 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 340" width="640" height="340">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 360" width="680" height="360">
   <defs>
     <style>
       @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-      @keyframes reveal { from{opacity:0} to{opacity:1} }
-      .bg    { fill:#0d1117 }
-      .bar   { fill:#161b22 }
-      .t     { font-family:'Courier New',Courier,monospace; font-size:13.5px }
-      .dim   { fill:#484f58 }
-      .wht   { fill:#e6edf3 }
-      .pur   { fill:#a78bfa }
-      .grn   { fill:#3fb950 }
-      .cyn   { fill:#79c0ff }
-      .cursor{ fill:#a78bfa; animation: blink 1s step-end infinite }
-      .l1  { animation: reveal .01s  .3s  both }
-      .l2  { animation: reveal .01s  .9s  both }
-      .l3  { animation: reveal .01s 1.5s  both }
-      .l4  { animation: reveal .01s 2.1s  both }
-      .l5  { animation: reveal .01s 2.7s  both }
-      .l6  { animation: reveal .01s 3.3s  both }
-      .l7  { animation: reveal .01s 3.9s  both }
-      .l8  { animation: reveal .01s 4.5s  both }
-      .l9  { animation: reveal .01s 5.1s  both }
-      .l10 { animation: reveal .01s 5.7s  both }
-      .cur { animation: reveal .01s 5.7s  both }
+      @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+      .bg  { fill:#0d1117 }
+      .bar { fill:#161b22 }
+      .t   { font-family:'Courier New',Courier,monospace; font-size:14px }
+      .dim { fill:#484f58 }
+      .wht { fill:#e6edf3 }
+      .pur { fill:#a78bfa }
+      .grn { fill:#3fb950 }
+      .cyn { fill:#79c0ff }
+      .red { fill:#ff7b72 }
+      .cur { fill:#a78bfa; animation:blink 1s step-end infinite }
+      .l1  { animation:fadeIn .01s  0.4s both }
+      .l2  { animation:fadeIn .01s  1.0s both }
+      .l3  { animation:fadeIn .01s  1.5s both }
+      .l4  { animation:fadeIn .01s  2.0s both }
+      .l5  { animation:fadeIn .01s  2.5s both }
+      .l6  { animation:fadeIn .01s  3.0s both }
+      .l7  { animation:fadeIn .01s  3.5s both }
+      .l8  { animation:fadeIn .01s  4.0s both }
+      .l9  { animation:fadeIn .01s  4.5s both }
+      .l10 { animation:fadeIn .01s  5.0s both }
+      .l11 { animation:fadeIn .01s  5.0s both }
     </style>
   </defs>
 
-  <!-- window -->
-  <rect width="640" height="340" rx="12" class="bg"/>
+  <!-- window bg -->
+  <rect width="680" height="360" rx="12" class="bg"/>
   <!-- title bar -->
-  <rect width="640" height="36" rx="12" class="bar"/>
-  <rect y="24" width="640" height="12" class="bar"/>
-  <!-- dots -->
-  <circle cx="22" cy="18" r="6" fill="#ff5f57"/>
-  <circle cx="44" cy="18" r="6" fill="#febc2e"/>
-  <circle cx="66" cy="18" r="6" fill="#28c840"/>
-  <!-- title -->
-  <text x="320" y="23" text-anchor="middle" class="t dim" font-size="12">bash — karthikeya@github: ~</text>
+  <rect width="680" height="38" rx="12" class="bar"/>
+  <rect y="26" width="680" height="12" class="bar"/>
+  <!-- traffic lights -->
+  <circle cx="24"  cy="19" r="6" fill="#ff5f57"/>
+  <circle cx="46"  cy="19" r="6" fill="#febc2e"/>
+  <circle cx="68"  cy="19" r="6" fill="#28c840"/>
+  <!-- window title -->
+  <text x="340" y="24" text-anchor="middle" class="t dim" font-size="12">bash  —  karthikeya@github: ~</text>
 
-  <!-- line 1 — prompt -->
-  <text x="18" y="68" class="t l1">
-    <tspan class="grn">karthikeya</tspan><tspan class="wht">@</tspan><tspan class="cyn">github</tspan><tspan class="wht">:</tspan><tspan class="pur">~</tspan><tspan class="wht">$ </tspan><tspan class="wht">./whoami.sh</tspan>
+  <!-- L1: first prompt line -->
+  <text x="20" y="72" class="t l1">
+    <tspan class="grn">karthikeya</tspan><tspan class="wht">@</tspan><tspan class="cyn">github</tspan><tspan class="wht">:</tspan><tspan class="pur">~</tspan><tspan class="wht">$ </tspan><tspan class="cyn">cat</tspan><tspan class="wht"> about.txt</tspan>
   </text>
 
-  <!-- line 2 — blank gap -->
-  <text x="18" y="92" class="t l2"><tspan class="dim">  ┌──────────────────────────────────────────────┐</tspan></text>
+  <!-- L2: top border -->
+  <text x="20" y="98" class="t l2 dim">  ╔══════════════════════════════════════════════════╗</text>
 
-  <!-- line 3 -->
-  <text x="18" y="112" class="t l3">
-    <tspan class="dim">  │  </tspan><tspan class="pur">Name     </tspan><tspan class="dim">──  </tspan><tspan class="wht">Sri Karthikeya</tspan><tspan class="dim">                    │</tspan>
+  <!-- L3: name -->
+  <text x="20" y="120" class="t l3">
+    <tspan class="dim">  ║  </tspan><tspan class="pur">Name      </tspan><tspan class="dim">=&gt;  </tspan><tspan class="wht">Sri Karthikeya</tspan><tspan class="dim">                      ║</tspan>
   </text>
 
-  <!-- line 4 -->
-  <text x="18" y="132" class="t l4">
-    <tspan class="dim">  │  </tspan><tspan class="pur">Role     </tspan><tspan class="dim">──  </tspan><tspan class="wht">Full-Stack Dev · AI Builder</tspan><tspan class="dim">        │</tspan>
+  <!-- L4: roles -->
+  <text x="20" y="142" class="t l4">
+    <tspan class="dim">  ║  </tspan><tspan class="pur">Roles     </tspan><tspan class="dim">=&gt;  </tspan><tspan class="wht">Full-Stack Dev  /  AI Builder</tspan><tspan class="dim">       ║</tspan>
   </text>
 
-  <!-- line 5 -->
-  <text x="18" y="152" class="t l5">
-    <tspan class="dim">  │           </tspan><tspan class="wht">Video Editor</tspan><tspan class="dim">                          │</tspan>
+  <!-- L5: also editor -->
+  <text x="20" y="164" class="t l5">
+    <tspan class="dim">  ║              </tspan><tspan class="wht">Video Editor</tspan><tspan class="dim">                         ║</tspan>
   </text>
 
-  <!-- line 6 -->
-  <text x="18" y="172" class="t l6">
-    <tspan class="dim">  │  </tspan><tspan class="pur">Location </tspan><tspan class="dim">──  </tspan><tspan class="wht">Andhra Pradesh, India 🇮🇳</tspan><tspan class="dim">          │</tspan>
+  <!-- L6: location -->
+  <text x="20" y="186" class="t l6">
+    <tspan class="dim">  ║  </tspan><tspan class="pur">Location  </tspan><tspan class="dim">=&gt;  </tspan><tspan class="wht">Andhra Pradesh, India</tspan><tspan class="dim">               ║</tspan>
   </text>
 
-  <!-- line 7 -->
-  <text x="18" y="192" class="t l7">
-    <tspan class="dim">  │  </tspan><tspan class="pur">Status   </tspan><tspan class="dim">──  </tspan><tspan class="grn">● Open to Work</tspan><tspan class="dim">                     │</tspan>
+  <!-- L7: status -->
+  <text x="20" y="208" class="t l7">
+    <tspan class="dim">  ║  </tspan><tspan class="pur">Status    </tspan><tspan class="dim">=&gt;  </tspan><tspan class="grn">Open to Work</tspan><tspan class="dim">                        ║</tspan>
   </text>
 
-  <!-- line 8 -->
-  <text x="18" y="212" class="t l8">
-    <tspan class="dim">  │  </tspan><tspan class="pur">Motto    </tspan><tspan class="dim">──  </tspan><tspan class="wht">"Ship first. Iterate fast."</tspan><tspan class="dim">        │</tspan>
+  <!-- L8: motto -->
+  <text x="20" y="230" class="t l8">
+    <tspan class="dim">  ║  </tspan><tspan class="pur">Motto     </tspan><tspan class="dim">=&gt;  </tspan><tspan class="wht">"Ship first. Iterate fast."</tspan><tspan class="dim">         ║</tspan>
   </text>
 
-  <!-- line 9 — border bottom -->
-  <text x="18" y="232" class="t l9"><tspan class="dim">  └──────────────────────────────────────────────┘</tspan></text>
+  <!-- L9: bottom border -->
+  <text x="20" y="252" class="t l9 dim">  ╚══════════════════════════════════════════════════╝</text>
 
-  <!-- line 10 — next prompt -->
-  <text x="18" y="260" class="t l10">
+  <!-- L10: exit code -->
+  <text x="20" y="278" class="t l10">
+    <tspan class="dim">  [</tspan><tspan class="grn">exit 0</tspan><tspan class="dim">]  file read successfully</tspan>
+  </text>
+
+  <!-- L11: new prompt + blinking cursor -->
+  <text x="20" y="308" class="t l11">
     <tspan class="grn">karthikeya</tspan><tspan class="wht">@</tspan><tspan class="cyn">github</tspan><tspan class="wht">:</tspan><tspan class="pur">~</tspan><tspan class="wht">$ </tspan>
   </text>
-
-  <!-- blinking cursor -->
-  <rect x="134" y="248" width="9" height="16" rx="1" class="cursor cur"/>
+  <rect x="136" y="295" width="9" height="17" rx="1" class="cur l11"/>
 </svg>
